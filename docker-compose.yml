@@ -1,0 +1,22 @@
+version: '2'
+services:
+  backend:
+    image: restaurant-reviews-backend:latest
+    build: backend/
+    ports:
+      - "8080:8080"
+    volumes:
+      - /Users/mdenunez/Documents/personal_projects/restaurant-reviews/backend/service-account-key.json:/app/config/service-account-key.json
+    environment:
+      NODE_ENV: production
+      FIREBASE_SERVICE_ACCOUNT_KEY_PATH: /app/config/service-account-key.json
+  client:
+    image: restaurant-reviews-client:latest
+    build: client/
+    ports:
+      - "3000:8080"
+    environment:
+      NODE_ENV: production
+      BACKEND_URL: "backend:8080"
+    depends_on:
+      - backend

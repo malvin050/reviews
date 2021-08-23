@@ -1,0 +1,15 @@
+// user management
+export const AUTHENTICATION_PREFIX = "/auth";
+export const SIGN_IN_PAGE_URL = AUTHENTICATION_PREFIX + "/signIn";
+export const SIGN_UP_PAGE_URL = AUTHENTICATION_PREFIX + "/signUp";
+
+// restaurant
+const RESTAURANT_PREFIX = "/restaurant";
+export const RESTAURANTS_URL = RESTAURANT_PREFIX;
+export const RESTAURANT_URL = RESTAURANT_PREFIX + "/:id";
+
+// admin
+const ADMIN_ROUTES_PREFIX = "/admin";
+export const ADMIN_USER_MANAGEMENT_URL = ADMIN_ROUTES_PREFIX + "/user";
+export const ADMIN_RESTAURANT_MANAGEMENT_URL = ADMIN_ROUTES_PREFIX + RESTAURANT_PREFIX;
+export const ADMIN_REVIEW_MANAGEMENT_URL = ADMIN_ROUTES_PREFIX + RESTAURANT_URL;
